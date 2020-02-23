@@ -17,12 +17,12 @@ namespace ConsoleApp4
             x[7] = 46;
             x[8] = 77;
             x[9] = 12;
-            
+            int s = 0;
             for(int i = 0; i < x.Length; i++ )
             {
-                i = x[0] + x[1] + x[2] + x[3] + x[4] + x[5] + x[6] + x[7] + x[8] + x[9];
-                Console.WriteLine(i);
+                s = x[i];                
             }
+            Console.WriteLine(s);
 
         }
     }
