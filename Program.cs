@@ -20,7 +20,7 @@ namespace ConsoleApp4
             int a = 0;
             for(int i = 0; i < x.Length; i++ )
             {
-                a = x[i];                
+                a += x[i];                
             }
             Console.WriteLine(s);
             
