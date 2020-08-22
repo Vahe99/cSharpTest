@@ -1,78 +1,167 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
-namespace ConsoleApp3
+namespace MyProject
 {
-    class Country
-    {
-        public string name;
-        public string capital;
-        public string languages;
-        public string etnic;
-        public string religion;
-        public int area;
-        public int population;
-
-        public Country()
-        {
-            name = "Republic of Armenia";
-            capital = "Yerevan";
-            languages = "Armenian";
-            etnic = "98.1% Armenians, 1.2% Yazidis, 0.4% Russians, 0.3% other";
-            religion = "Cristianity";
-            area = 29743;
-            population = 2951745;
-          
-            print();
-        }
-        public Country(string _name, string _capital, string _languages, string _etnic, string _religion, int _area, int _population)
-        {
-            name = _name;
-            capital = _capital;
-            languages = _languages;
-            etnic = _etnic;
-            religion = _religion;
-            area = _area;
-            population = _population;
-           
-            print();
-        }
-
-        public void print()
-        {
-            Console.WriteLine("Name - " + name);
-            Console.WriteLine("Capital - " + capital);
-            Console.WriteLine("Languages - " + languages);
-            Console.WriteLine("Etnic groups - " + etnic);
-            Console.WriteLine("Religion - " + religion);
-            Console.WriteLine("Area(km2) - " + area);
-            Console.WriteLine("Population - " + population);
-        }
-
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            string TTranscaucasianCountry;
-            Console.WriteLine("Which Transcaucasian country are you interested in? \n 1)Armenia, 2)Georgia, 3)Azerbaijan");
-            Console.WriteLine();
-            TTranscaucasianCountry = Console.ReadLine();
-            Console.WriteLine();
-            if (TTranscaucasianCountry is "Armenia")
+            Console.WriteLine("Indicate your gender.\nmale or female");
+            string MaleFemale = Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("Hello. What is you name?");
+            string Name = Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine($"Nice to meet you {Name}");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine($"{Name} do you want a game with a question?");
+            string YeasNo = Console.ReadLine();
+            Console.Clear();
+            
+            switch (YeasNo)
             {
-                Country Armenian = new Country();
-                Console.WriteLine();
-            } else if(TTranscaucasianCountry is "Georgia")
-            {
-                Country Georgia = new Country("Georgia", "Tbilisi", "Georgian", "86,8% Georgians, 6,2% Azerbaijanis, 4,5% Armenians, 2,85 other", "Cristianity", 69700, 3723464);
-                Console.WriteLine();
-            } if(TTranscaucasianCountry is "Azerbaijan")
-            {
-                Country Azerbaijan = new Country("Republic of Azerbaijan", "Baku", "Azerbaijani", "91.60% Azerbaijanis, 2.02% Lezgians, 1.35% Armenians, 1.34% Russians, 1.26% Talysh, 2,43 other", "Shia Muslim", 86600, 10027874);
-                Console.WriteLine();
+                case "yeas":
+                    Console.WriteLine("Great, let's start");
+                    break;
+
+                case "no":
+                    Console.WriteLine($"I'm sorry {Name} but you have no choice.");
+                    break;
+
+                default:
+                    Console.WriteLine("I wanted to see either yes or no. Although that wouldn't change anything.");
+                    break;
             }
-                       
-        }
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("I'll ask you four question, be careful.");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Which of these countries is landlocked?\n1.Greece 2.Qatar 3.Belgium 4.Somali");
+            string QuestionOne = Console.ReadLine();
+
+            switch (QuestionOne)
+            {
+                case "Belgium":
+                    Console.WriteLine("You answered correctly. Not bad.");
+                    break;
+
+                default:
+                    Console.WriteLine("You wrong.");                    
+                    break;
+            }
+
+            Console.WriteLine("Which country is bigger?\n1.Italia 2.Egipt 3.Iran 4.Canada");
+            string QuestionTwo = Console.ReadLine();
+
+            switch (QuestionTwo)
+            {
+                case "Canada":
+                    Console.WriteLine("The correct answer is great.");
+                    break;
+
+                default:
+                    Console.WriteLine("You wrong.");
+                    break;
+            }
+
+            Console.WriteLine("Who was the greatest of the armenian kings?\n1.Tigranes II 2.Smbat III 3.Levon II 4.Arshak I");
+            string QuestionTree = Console.ReadLine();
+
+            switch (QuestionTree)
+            {
+                case "Tigranes II":
+                    Console.WriteLine("Correctly answered. Along the way, you're not as stupid as I thought.");
+                    break;
+
+                default:
+                    Console.WriteLine("You wrong.");
+                    break;
+            }
+
+            Console.WriteLine("Which these Byzantine imperial dynasties is armenian?\n1.Comnenus 2.Macedonian 3.Angels 4.Justinians");
+            string QuestionFore = Console.ReadLine();
+
+            switch (QuestionFore)
+            {
+                case "Macedonian":
+                    Console.WriteLine("Wow, I didn't think you knew about that.");
+                    break;
+
+                default:
+                    Console.WriteLine("You wrong.");
+                    break;
+            }
+
+            Console.WriteLine("I have no more questions. You are free.");
+            Console.ReadKey();
+            Console.Clear();
+
+
+            Console.ForegroundColor = ConsoleColor.Green;
+
+            switch (MaleFemale)
+            {
+                case "male":
+                Console.WriteLine($"Good morning mister {MaleFemale}. I am Anna, glad to meet you.");
+                    break;
+
+                case "female":
+                    Console.WriteLine($"Good morning mis {MaleFemale}. I am Anna, glad to meet you.");
+                    break;
+            }
+
+            Console.WriteLine("What kind of strange person was talking to you?");
+            Console.ReadKey();
+            Console.WriteLine("I have never seen him in our bank.");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Well, okay, it's not that important.");
+            Console.ReadKey();
+            Console.WriteLine("I see that you have come to exchange your currency.");
+            Console.ReadKey();
+            Console.WriteLine("Please follow me, I will show you the current currency code.");
+            Console.ReadKey();
+            Console.Clear();
+
+            Console.WriteLine("Choose currency\n\nEUR USD RUB AMD");
+            string Currency = Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("Enter the amount");
+            Console.WriteLine(Currency);
+            double money = Convert.ToInt32(Console.ReadLine());
+
+
+            switch (Currency)
+            {
+                case "EUR":
+                    Console.WriteLine("USD - " + money * 1.19 + "\nRUB - " + money * 87.47 + "\nAMD - " + money * 578.16);
+                    break;
+
+                case "USD":
+                    Console.WriteLine("EUR - " + money / 1.19 + "\nRUB - " + money * 73.23 + "\nAMD - " + money * 484.30);
+                    break;
+
+                case "RUB":
+                    Console.WriteLine("EUR - " + money / 87.47 + "\nUSD - " + money / 73.23 + "\nAMD - " + money * 6.61);
+                    break;
+
+                case "AMD":
+                    Console.WriteLine("EUR - " + money / 578.16 + "\nUSD - " + money / 484.30 + "\nRUB - " + money / 6.61);
+                    break;
+            }
+
+
+            Console.ReadKey();
+        }       
     }
 }
-
